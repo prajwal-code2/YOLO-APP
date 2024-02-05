@@ -46,14 +46,9 @@ class App(ctk.CTk):
 		self.screen_width = self.winfo_screenmmwidth()
 		self.screen_height = self.winfo_screenheight()
 
+
         # Intialize the filepath to NONE
 		self.file_path = None
-
-
-		# Making a dictionary from coco names for counter
-		self.coco_names = {}
-		for name in class_list:
-			self.coco_names[name]=0
 
 
         # Title Label
@@ -259,11 +254,14 @@ class App(ctk.CTk):
 
     # This function is used to perform inference on desired input
 	def YOLO_Inferrence(self):
-
+		
+		self.coco_names = {}
+		for name in class_list:
+			self.coco_names[name]=0
+		self.textBox.delete("0.0", "end")
 		self.textBox.pack_forget()
 		self.detectionResults={}
 		self.objectid=[]
-		self.coco_names=self.coco_names.copy()
 		self.function_type = self.functionOptionMenu.get()
 		if self.inputVar.get()=='image':
 			if self.file_path=='' or self.file_path==None:
