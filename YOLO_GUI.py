@@ -316,12 +316,18 @@ class App(ctk.CTk):
 				if len(result)!=0:
 					if self.function_type=="Normal Object Detection":
 						result = cv2.resize(result,(640,360))
-						cv2.imshow("video",result)		
+						cv2.imshow("video",result)
+						self.img = cv2.cvtColor(cv2.resize(cv2.imread(r"data/canvas background.webp"),(640,360)),cv2.COLOR_BGR2RGB)
+						self.img = ImageTk.PhotoImage(Image.fromarray(self.img))
+						self.canvas.itemconfigure(self.canvasBackground, image=self.img)		
 					
 
 					elif self.function_type=="Count Number of Objects":
 						frame = cv2.resize(frame,(640,360))
 						cv2.imshow("video",frame)
+						self.img = cv2.cvtColor(cv2.resize(cv2.imread(r"data/canvas background.webp"),(640,360)),cv2.COLOR_BGR2RGB)
+						self.img = ImageTk.PhotoImage(Image.fromarray(self.img))
+						self.canvas.itemconfigure(self.canvasBackground, image=self.img)
 						self.textBox.pack(anchor='ne',side='bottom',padx=60,pady=144)
 						self.textBox.delete("0.0", "end")
 						text = self.create_text(result)
@@ -340,8 +346,8 @@ class App(ctk.CTk):
 		else:
 			messagebox.showwarning("WARNING","Please Choose a Input Type")
 
+		# Change file path to none after task is completed
 		self.file_path=None
-		
 
 
 
