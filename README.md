@@ -7,45 +7,49 @@
 ### <p align ="center"> Implemented using: </p>
 <p align ="center">
 <a href="https://www.python.org/" target="_blank" rel="noreferrer">   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/800px-Python-logo-notext.svg.png" width="64" height="64" /></a>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://www.ultralytics.com/" target="_blank" rel="noreferrer">   <img src="https://community.ultralytics.com/uploads/default/original/1X/4799424d80923bbd57dd236fb8489bc26dac4f67.png" width="188" height="64" /></a>  
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://opencv.org/" target="_blank" rel="noreferrer">   <img src="https://opencv.org/wp-content/uploads/2022/05/logo.png" width="64" height="64" /></a> 
-<a href="https://www.tensorflow.org/" target="_blank" rel="noreferrer">   <img src="https://github.com/prajwal-code2/dogs-emotion/assets/74657725/92956e76-9975-48fe-b253-66073a64aa58" width="128" height="80" /></a>
-<a href="https://keras.io/" target="_blank" rel="noreferrer">   <img src="https://github.com/prajwal-code2/dogs-emotion/assets/74657725/ed5ce50e-409e-4d3a-b4fc-f0853efb1bf9" width="128" height="64" /></a>  
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <a href="https://docs.python.org/3/library/tkinter.html" target="_blank" rel="noreferrer"> <img src="https://miro.medium.com/v2/resize:fit:1400/1*wEAtpMCNxjcW_9VZyGafdg.png" width="164" height="80" /></a>
+
 </p>
 
 <br>
 
 ##     <p align = "left"> Introduction 📚 </p>
 
-Many dog owners have to leave their pets alone at home and have to regularly check how their dog is which is not an easy task. This project is a real-time dog emotion detector which tells whether dog is happy, sad, relaxed or angry. With this project, dog owner can be notified when their dog is not feeling well or is angry because someone breaks into the house and then he/she can take a suitable step. The model used in the project is built from scratch on dog-emotion dataset available on kaggle.  
+This is a python application that uses the powerful YOLOv8 by ultralytics for object detection and tkinter for graphical user interface. With this application you can detect and count the no. of objects in images/videos and can also track the objects. This application can be modified to be used as a object tracker or people counter entering/exiting the premises.
 
 <br>
 
-##     <p align = "left">About CNN_Model💻 </p>
+##     <p align = "left">About YOLO </p>
 
-The system utilizes the model made from scratch. <br>Model uses 4 convolutional block(each block contains 2 Conv2D layers followed by a maxpooling layer) where filters used in blocks are 64, 128, 256 and 512 resp. after which a flatten layer is used which make the output of last convolutional block one-dimentional. Then 3 dense layers of 256, 128, 64 units resp. is used followed by a dense layer of 4 units and activation softmax to determine the emotion from the frame.<br> Diagram for illustration is given below:<br>
-
-![dog_emotion](https://github.com/prajwal-code2/dogs-emotion/assets/74657725/8fda3d39-9e79-4417-850e-d131af2b52b2)
-
-<br>
-
-![model_architecture](https://github.com/prajwal-code2/dogs-emotion/assets/74657725/5ea92473-d63b-46d4-840e-f1a930a337cc)
+Ultralytics YOLOv8 is a cutting-edge, state-of-the-art (SOTA) model that builds upon the success of previous YOLO versions and introduces new features and improvements to further boost performance and flexibility. YOLOv8 is designed to be fast, accurate, and easy to use, making it an excellent choice for a wide range of object detection and tracking, instance segmentation, image classification and pose estimation tasks.
 
 
 <br>
 
 ##     <p align = "left"> Features ⭐ </p>
- -  Real-time emotion detector for dogs.
- -  Can be used for other animals as well after few modification.
+ -  Utilizes the powerful YOLOv8 model for object detection.
+ -  Detects the different kind of object present in images and videos.
+ -  Can count and keep track of object in images and videos.
 
 <br>
 
 ##     <p align = "left"> Installation and Usage 🛠️ </p>
-1. Clone this repository to your local machine .
-2. Download the kaggle dog-emotion dataset from the link given in 'Dog Emotion' folder in the repository.
-3. Run each cell of emotion_detector.ipynb and save the model in file after training is completed. 
-4. Place the camera so that your dog is visible.
-5. Run the script 'python use_model.py'.
-6. The tool will then use your computer's camera to monitor the dog emotion.
+1. Clone this repository to your local machine.
+2. Change the directory to YOLO-APP so that it will run without any errors.
+3. Then install the required packages by running below script
+   ```sh
+   pip install -r requirements.txt
+   ```
+4. Run the below script to run the app
+   ```sh
+   python YOLO_GUI.py
+   ```
+5. Use the app as per requirement and can also check demo video below for help.
 
 <br>
 
