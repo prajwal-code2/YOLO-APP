@@ -60,7 +60,10 @@ Ultralytics YOLOv8 is a cutting-edge, state-of-the-art (SOTA) model that builds 
 
 
 
-https://github.com/prajwal-code2/YOLO-APP/assets/74657725/eb320695-006e-45ca-b9b9-0306086283ec
+
+
+https://github.com/prajwal-code2/YOLO-APP/assets/74657725/16918c77-9caa-4efd-9b6e-15f74cd0951c
+
 
 
 
