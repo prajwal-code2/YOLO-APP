@@ -8,9 +8,11 @@ from tkinter import messagebox
 from PIL import ImageTk,Image
 
 
+# Load the weights in YOLO model
 model=YOLO(r'YOLO WEIGHTS/yolov8s.pt')
 
 
+# Creates a list containing the different categories that can be detected via YOLO app
 my_file = open("coco.txt", "r")
 data = my_file.read()
 class_list = data.split("\n")
@@ -94,7 +96,7 @@ class App(ctk.CTk):
 		self.inputType.place(relx=0.05,rely=0.50)
 
 
-		# Type of  input 
+		# Type of  input radio button
 		self.inputVar = tk.StringVar(value="Image")
 		self.imageRadioButton = ctk.CTkRadioButton(self,
                                    text="Image",font=("Arial",15,'bold'),
@@ -263,6 +265,8 @@ class App(ctk.CTk):
 		self.detectionResults={}
 		self.objectid=[]
 		self.function_type = self.functionOptionMenu.get()
+
+		# For image processing
 		if self.inputVar.get()=='image':
 			if self.file_path=='' or self.file_path==None:
 				messagebox.showwarning("WARNING","Please Select a Image First")
@@ -291,6 +295,7 @@ class App(ctk.CTk):
 					self.textBox.delete("0.0", "end")
 					self.textBox.insert("0.0","No Object Detected!")
 
+		# For video processing
 		elif self.inputVar.get()=='video':
 			if self.file_path=='' or self.file_path==None:
 				messagebox.showwarning("WARNING","Please Select a Video First")
